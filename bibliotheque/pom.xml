@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                fr.centralesupelec.bibliotheque/fr.centralesupelec.bibliotheque.HelloApplication
+                                fr.centralesupelec.bibliotheque/fr.centralesupelec.bibliotheque.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
