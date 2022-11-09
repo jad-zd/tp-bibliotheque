@@ -11,7 +11,6 @@ public class LandingPageController {
     Label nameLabel;
     @FXML
     TextField searchText;
-
     @FXML
     ChoiceBox searchType;
 

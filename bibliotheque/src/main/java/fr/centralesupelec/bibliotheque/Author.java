@@ -26,6 +26,6 @@ public class Author extends Person{
 
     @Override
     public String toString(){
-        return "First name: "+this.getPrenom()+", Last name: "+this.getNom()+", ID: "+this.getId()+", Birthdate: "+this.birthdate;
+        return "First name: "+this.getPrenom()+", Last name: "+this.getNom()+", ID: "+this.getId()+", Birthdate: "+this.birthdate.get();
     }
 }
