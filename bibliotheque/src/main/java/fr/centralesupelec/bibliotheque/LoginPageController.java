@@ -20,15 +20,16 @@ public class LoginPageController {
     private Scene scene;
     private Parent root;
     public void login(ActionEvent event) throws IOException {
-        String username = nameTextField.getText();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LandingPage.fxml"));
-        root = loader.load();
+        String username = nameTextField.getText(); // Get the inserted text
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LandingPage.fxml")); // Create a FXML loader for the next page
+        root = loader.load(); // Set the root node as the next page's
 
-        LandingPageController landingPageController = loader.getController();
+        LandingPageController landingPageController = loader.getController(); // Import the controller of the next page
         landingPageController.displayName(username);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("Welcome to e-Library");
         stage.setScene(scene);
         stage.show();
     }
