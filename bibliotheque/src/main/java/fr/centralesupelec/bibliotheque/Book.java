@@ -13,7 +13,7 @@ public class Book {
     private ListProperty<Author> authors;
     private ObjectProperty<Edition> edition;
     private ListProperty<String> keyWords;
-    private BooleanProperty borrowed;
+    private BooleanProperty borrowedOnce;
 
     public String getTitle() {
         return title.get();
@@ -49,21 +49,21 @@ public class Book {
         this.keyWords.setValue(keyWords);
     }
 
-    public Boolean  getBorrowed() {
-        return borrowed.get();
+    public Boolean  getBorrowedOnce() {
+        return borrowedOnce.get();
     }
-    public void setBorrowed(Boolean borrowed) {
-        this.borrowed.set(borrowed);
+    public void setBorrowedOnce(Boolean borrowedOnce) {
+        this.borrowedOnce.set(borrowedOnce);
     }
 
-    public Book(String title, Integer publishYear, Integer id, ObservableList<Author> authors, Edition edition, ObservableList<String> keyWords, Boolean borrowed) {
+    public Book(String title, Integer publishYear, Integer id, ObservableList<Author> authors, Edition edition, ObservableList<String> keyWords, Boolean borrowedOnce) {
         this.title = new SimpleStringProperty(title);
         this.publishYear = new SimpleIntegerProperty(publishYear);
         this.id = new SimpleIntegerProperty(id);
         this.authors = new SimpleListProperty<Author>(authors);
         this.edition = new SimpleObjectProperty<Edition>(edition);
         this.keyWords = new SimpleListProperty<String>(keyWords);
-        this.borrowed = new SimpleBooleanProperty(borrowed);
+        this.borrowedOnce = new SimpleBooleanProperty(borrowedOnce);
     }
 
     @Override
@@ -74,6 +74,6 @@ public class Book {
                 +", Authors: "+this.authors.get() // You can specify get(i) to get the i element in the ListProperty
                 +", Edition: "+this.edition.get()
                 +", Key words: "+this.keyWords.get() // Same here
-                +", Borrowed: "+this.borrowed.get();
+                +", Borrowed once: "+this.borrowedOnce.get();
     }
 }

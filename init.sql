@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS Books (
     kw_id3 INT,
     kw_id4 INT,
     kw_id5 INT,
-    borrowed BOOLEAN NOT NULL,
+    borrowedOnce BOOLEAN NOT NULL,
     PRIMARY KEY (book_id),
     FOREIGN KEY (edition_isbn) REFERENCES Editions(isbn),
     FOREIGN KEY (kw_id1) REFERENCES Key_words(kw_id),
@@ -99,27 +99,31 @@ CREATE TABLE IF NOT EXISTS Loans (
 
 /* Add examples */
 
--- INSERT INTO Users VALUES (1234, 'Jack', 'Rayan', 'jack.rayan@student.com', 'Light', 'User', 2, 14);
--- INSERT INTO Users VALUES (3763, 'Bernard', 'Arnoult', 'bernard.arnoult@student.com', 'Moderate', 'User', 4, 21);
--- INSERT INTO Users VALUES (1111, 'Gerome', 'Cartier', 'gerome.cartier@e-library.com', 'Heavy', 'Admin', 6, 28);
+INSERT INTO Users VALUES (1234, 'Jack', 'Rayan', 'jack.rayan@student.com', 'Light', 'User', 2, 14);
+INSERT INTO Users VALUES (3763, 'Bernard', 'Arnoult', 'bernard.arnoult@student.com', 'Moderate', 'User', 4, 21);
+INSERT INTO Users VALUES (1111, 'Gerome', 'Cartier', 'gerome.cartier@e-library.com', 'Heavy', 'Admin', 6, 28);
 
--- INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('JK', 'Rowlings', '1987-03-11');
--- INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('DJ', 'Khaled', '1993-05-28');
--- INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('Eric', 'Baldwin', '1979-10-07');
+INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('JK', 'Rowlings', '1987-03-11');
+INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('DJ', 'Khaled', '1993-05-28');
+INSERT INTO Authors(first_name, last_name, birth_date) VALUES ('Eric', 'Baldwin', '1979-10-07');
 
--- INSERT INTO Editions VALUES (2972698269, 'Hachette', 2013);
--- INSERT INTO Editions VALUES (3798363678, 'Ellipse', 2015);
+INSERT INTO Editions VALUES (2972698269, 'Hachette', 2013);
+INSERT INTO Editions VALUES (3798363678, 'Ellipse', 2015);
 
--- INSERT INTO Key_words(key_word) VALUES ('Love');
--- INSERT INTO Key_words(key_word) VALUES ('Action');
--- INSERT INTO Key_words(key_word) VALUES ('Science');
--- INSERT INTO Key_words(key_word) VALUES ('Drama');
+INSERT INTO Key_words(key_word) VALUES ('Love');
+INSERT INTO Key_words(key_word) VALUES ('Action');
+INSERT INTO Key_words(key_word) VALUES ('Science');
+INSERT INTO Key_words(key_word) VALUES ('Drama');
 
--- INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, kw_id2, borrowed) VALUES ('Harry Potter', 1999, 2972698269, 1, 2, FALSE);
--- INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, borrowed) VALUES ('Beep boop', 2004, 3798363678, 3, FALSE);
--- INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, borrowed) VALUES ('Babar', 2006, 3798363678, 4, FALSE);
+INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, kw_id2, borrowedOnce) VALUES ('Harry Potter', 1999, 2972698269, 1, 2, FALSE);
+INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, borrowedOnce) VALUES ('Beep boop', 2004, 3798363678, 3, FALSE);
+INSERT INTO Books(title, publish_year, edition_isbn, kw_id1, borrowedOnce) VALUES ('Babar', 2006, 3798363678, 4, FALSE);
 
--- INSERT INTO Book_author VALUES (1,1);
--- INSERT INTO Book_author VALUES (2,2);
--- INSERT INTO Book_author VALUES (2,3);
--- INSERT INTO Book_author VALUES (3,2);
+INSERT INTO Book_author VALUES (1,1);
+INSERT INTO Book_author VALUES (2,2);
+INSERT INTO Book_author VALUES (2,3);
+INSERT INTO Book_author VALUES (3,2);
+
+INSERT INTO Loans(book_id, user_id, start_date, end_date, active) VALUES (1, 1234, '2019-03-11', '2019-03-25', TRUE);
+
+UPDATE Books SET borrowedOnce = TRUE WHERE book_id = 1;

@@ -15,6 +15,7 @@ public class Loan extends Redlisted {
     public Loan(LocalDate endDate, Boolean active, User user, Book book){
         super(endDate, active, user);
         this.book = new SimpleObjectProperty<Book>(book);
+        book.setBorrowedOnce(true);
     }
 
     @Override
