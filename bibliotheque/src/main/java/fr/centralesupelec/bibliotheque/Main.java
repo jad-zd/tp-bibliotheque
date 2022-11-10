@@ -39,13 +39,13 @@ public class Main extends Application {
 //        System.out.println(book1.toString());
 //        User user1 = new User("Z","J","j@v",2872,Category.Light, Role.User);
 
-        DataBaseQuery dataBaseQuery = new DataBaseQuery();
+//        DataBaseQuery dataBaseQuery = new DataBaseQuery();
 //        System.out.println(dataBaseQuery.getBorrowersList());
 //        System.out.println(dataBaseQuery.getAllBooks());
 
 //        System.out.println(dataBaseQuery.getUserById("1111"));
-        ObservableList<Book> books = dataBaseQuery.getAllBooks();
-        ObservableList<User> users = dataBaseQuery.getAllUsers();
+//        ObservableList<Book> books = dataBaseQuery.getAllBooks();
+//        ObservableList<User> users = dataBaseQuery.getAllUsers();
 //        System.out.println(books);
 //        System.out.println(users);
 //        Loan loan = new Loan(LocalDate.now().plusDays(users.get(0).getMaxBorrowTime()), true, users.get(0), books.get(1));
