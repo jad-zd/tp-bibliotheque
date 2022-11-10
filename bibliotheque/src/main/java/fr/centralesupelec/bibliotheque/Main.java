@@ -31,9 +31,10 @@ public class Main extends Application {
         ObservableList<Author> authors = FXCollections.observableArrayList(author1, author2);
         System.out.println(authors.get(0));
         System.out.println(authors); // Cannot use authors.get cz here it is an observable list
+        Edition edition1 = new Edition("Hachette", 2003, 2896389);
         ObservableList<String> keyWords = FXCollections.observableArrayList("He", "K", "hk");
         System.out.println(keyWords);
-        Book book1 = new Book("Hello from the other side", 2012, 28630, authors, keyWords,false);
+        Book book1 = new Book("Hello from the other side", 2012, 28630, authors, edition1, keyWords,false);
         System.out.println(book1.getAuthors()); // Can use authors.get cz here it is an ListProperty
         System.out.println(book1.toString());
         User user1 = new User("Z","J","j@v",2872,Category.Light, Role.User);

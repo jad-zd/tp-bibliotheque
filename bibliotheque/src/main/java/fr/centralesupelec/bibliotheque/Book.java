@@ -11,6 +11,7 @@ public class Book {
     private IntegerProperty publishYear;
     private IntegerProperty id;
     private ListProperty<Author> authors;
+    private ObjectProperty<Edition> edition;
     private ListProperty<String> keyWords;
     private BooleanProperty borrowed;
 
@@ -20,17 +21,11 @@ public class Book {
     public void setTitle(String title) {
         this.title.set(title);
     }
-    public StringProperty titleProperty() {
-        return title;
-    }
 
     public Integer getPublishYear() {
         return publishYear.get();
     }
     public void setPublishYear(Integer publishYear) { this.publishYear.set(publishYear); }
-    public IntegerProperty publishYearProperty() {
-        return publishYear;
-    }
 
     public Integer getId() {
         return id.get();
@@ -38,24 +33,20 @@ public class Book {
     public void setId(Integer id) {
         this.id.set(id);
     }
-    public IntegerProperty idProperty() {
-        return id;
-    }
 
     public ObservableList<Author> getAuthors() { return authors.get(); }
     public void setAuthors(ObservableList<Author> authors) {
         this.authors.setValue(authors);
     }
-    public ListProperty<Author> authorsProperty() {
-        return authors;
+
+    public Edition getEdition() { return edition.get(); }
+    public void setEdition(Edition edition) {
+        this.edition.setValue(edition);
     }
 
     public ObservableList<String> getKeyWords() { return keyWords.get(); }
     public void setKeyWords(ObservableList<String> keyWords) {
         this.keyWords.setValue(keyWords);
-    }
-    public ListProperty<String> keyWordsProperty() {
-        return keyWords;
     }
 
     public Boolean  getBorrowed() {
@@ -64,16 +55,13 @@ public class Book {
     public void setBorrowed(Boolean borrowed) {
         this.borrowed.set(borrowed);
     }
-    public BooleanProperty borrowedProperty() {
-        return borrowed;
-    }
 
-
-    public Book(String title, Integer publishYear, Integer id, ObservableList<Author> authors, ObservableList<String> keyWords, Boolean borrowed) {
+    public Book(String title, Integer publishYear, Integer id, ObservableList<Author> authors, Edition edition, ObservableList<String> keyWords, Boolean borrowed) {
         this.title = new SimpleStringProperty(title);
         this.publishYear = new SimpleIntegerProperty(publishYear);
         this.id = new SimpleIntegerProperty(id);
         this.authors = new SimpleListProperty<Author>(authors);
+        this.edition = new SimpleObjectProperty<Edition>(edition);
         this.keyWords = new SimpleListProperty<String>(keyWords);
         this.borrowed = new SimpleBooleanProperty(borrowed);
     }
@@ -84,6 +72,7 @@ public class Book {
                 +", Publish year: "+this.publishYear.get()
                 +", ID: "+this.id.get()
                 +", Authors: "+this.authors.get() // You can specify get(i) to get the i element in the ListProperty
+                +", Edition: "+this.edition.get()
                 +", Key words: "+this.keyWords.get() // Same here
                 +", Borrowed: "+this.borrowed.get();
     }

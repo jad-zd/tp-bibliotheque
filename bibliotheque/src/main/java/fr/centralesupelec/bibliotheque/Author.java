@@ -15,9 +15,6 @@ public class Author extends Person{
     public void setBirthdate(LocalDate birthdate) {
         this.birthdate.set(birthdate);
     }
-    public ObjectProperty<LocalDate> birthdateProperty() {
-        return birthdate;
-    }
 
     public Author(String nom, String prenom, Integer id, LocalDate birthdate) {
         super(nom, prenom, id);

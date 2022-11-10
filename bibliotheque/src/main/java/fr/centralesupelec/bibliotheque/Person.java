@@ -13,9 +13,6 @@ public class Person {
     public void setNom(String nom) {
         this.nom.set(nom);
     }
-    public StringProperty nomProperty() {
-        return nom;
-    }
 
     public String getPrenom(){
         return this.prenom.get();
@@ -23,18 +20,12 @@ public class Person {
     public void setPrenom(String prenom){
         this.prenom.set(prenom);
     }
-    public StringProperty prenomProperty() {
-        return prenom;
-    }
 
     public Integer getId(){
         return this.id.get();
     }
     public void setId(Integer id){
         this.id.set(id);
-    }
-    public IntegerProperty idProperty() {
-        return id;
     }
 
     public Person(String nom, String prenom, Integer id){
