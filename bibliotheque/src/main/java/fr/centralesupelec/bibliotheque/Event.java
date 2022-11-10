@@ -1,7 +1,6 @@
 package fr.centralesupelec.bibliotheque;
 
 import javafx.beans.property.*;
-
 import java.time.LocalDate;
 
 public class Event {

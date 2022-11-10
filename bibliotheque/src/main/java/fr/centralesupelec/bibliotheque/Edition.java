@@ -2,8 +2,6 @@ package fr.centralesupelec.bibliotheque;
 
 import javafx.beans.property.*;
 
-import java.time.LocalDate;
-
 public class Edition {
     private StringProperty name;
     private IntegerProperty year;

@@ -17,10 +17,8 @@ public class AdminPageController implements Initializable {
     private Label nameLabel;
     @FXML
     private ListView<User> borrowersList;
-
     private User currentUser;
     DataBaseQuery dataBaseQuery = new DataBaseQuery();
-
     ObservableList<User> allUsers = dataBaseQuery.getAllUsers();
     ObservableList<User> borrowers = dataBaseQuery.getBorrowersList();
 
@@ -31,7 +29,6 @@ public class AdminPageController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends User> observableValue, User user, User t1) {
                 currentUser = borrowersList.getSelectionModel().getSelectedItem();
-
             }
         });
     }

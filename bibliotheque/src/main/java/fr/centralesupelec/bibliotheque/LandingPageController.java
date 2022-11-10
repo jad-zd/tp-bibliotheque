@@ -1,9 +1,7 @@
 package fr.centralesupelec.bibliotheque;
 
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,20 +14,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.EventObject;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class LandingPageController implements Initializable {
     public User theUser;
-//    public void setTheUser(User theUser){ this.theUser.set(theUser);}
-//    public User getTheUser() {
-//        return theUser.get();
-//    }
     @FXML
     private Label nameLabel;
     @FXML
@@ -106,7 +97,6 @@ public class LandingPageController implements Initializable {
         AdminPageController adminPageController = loader.getController();
         adminPageController.theUser=theUser;
         adminPageController.displayName(theUser);
-        ;
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Welcome to the Admin page");

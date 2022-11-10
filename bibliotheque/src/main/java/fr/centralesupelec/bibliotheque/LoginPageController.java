@@ -27,7 +27,6 @@ public class LoginPageController {
 
         try {
             User theUser = dataBaseQuery.getUserById(username);
-            System.out.println(theUser);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LandingPage.fxml")); // Create a FXML loader for the next page
             root = loader.load(); // Set the root node as the next page's
 
@@ -42,7 +41,6 @@ public class LoginPageController {
             stage.show();
 
         } catch (Exception e) {
-            System.out.println(e);
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("UNAUTHORIZED USER");
             alert.setHeaderText("You are about to be kicked out!");

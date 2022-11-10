@@ -3,9 +3,6 @@ package fr.centralesupelec.bibliotheque;
 import javafx.beans.property.*;
 import javafx.collections.ObservableList;
 
-import java.time.LocalDate;
-import java.util.List;
-
 public class Book {
     private StringProperty title;
     private IntegerProperty publishYear;
